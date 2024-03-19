@@ -35,14 +35,17 @@ class GameRepositiry {
       if (turn == PlayerTurn.o) {
         bottomSheet.show(ctx: ctx, content: messageX, ref: ref, isDraw: false);
         ref.read(gameScoreProvider.notifier).incriment(0);
+        ref.read(gameBordProvider.notifier).gameReset();
       } else if (turn == PlayerTurn.x) {
         bottomSheet.show(ctx: ctx, content: messageO, ref: ref, isDraw: false);
         ref.read(gameScoreProvider.notifier).incriment(1);
+        ref.read(gameBordProvider.notifier).gameReset();
       }
     }
 
     if (draw) {
       bottomSheet.show(ctx: ctx, content: messageDraw, ref: ref, isDraw: true);
+      ref.read(gameBordProvider.notifier).gameReset();
     }
   }
 }

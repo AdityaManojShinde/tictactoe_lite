@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tictactoe/core/provider/providers.dart';
 
 class CustomBottomSheet {
   void show(
@@ -25,8 +24,6 @@ class CustomBottomSheet {
                       child: IconButton(
                           onPressed: () {
                             Navigator.of(context).pop();
-
-                            ref.read(gameBordProvider.notifier).gameReset();
                           },
                           icon: const CircleAvatar(
                               backgroundColor: Colors.red,
