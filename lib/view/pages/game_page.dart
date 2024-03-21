@@ -25,7 +25,7 @@ class _GamePageState extends State<GamePage> {
         bottom: const PreferredSize(
             preferredSize: Size(double.infinity, 50),
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(10),
               // Too big name throws an error
               child: FittedBox(child: GameScore()),
             )),

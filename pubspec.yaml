@@ -39,6 +39,8 @@ dependencies:
   go_router: ^13.2.1
   flutter_launcher_icons: ^0.13.1
   auto_size_text: ^3.0.0
+  url_launcher: ^6.2.5
+  share_plus: ^8.0.2
 
 dev_dependencies:
   flutter_test:

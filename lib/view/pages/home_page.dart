@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tictactoe/data/src/img.dart';
+import 'package:tictactoe/view/pages/settings_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,6 +27,14 @@ class HomePage extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(),
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SettingsPage()));
+        },
+        child: const Icon(Icons.settings),
+      ),
       body:
           OrientationBuilder(builder: (BuildContext context, Orientation ori) {
         if (ori == Orientation.landscape) {
