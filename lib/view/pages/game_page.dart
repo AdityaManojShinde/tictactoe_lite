@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe/view/widgets/back_button.dart';
 import 'package:tictactoe/view/widgets/game_grid.dart';
 import 'package:tictactoe/view/widgets/game_score.dart';
+import 'package:tictactoe/view/widgets/player_turn_chip.dart';
 import 'package:tictactoe/view/widgets/reset_button.dart';
 
 class GamePage extends StatefulWidget {
@@ -17,13 +18,16 @@ class _GamePageState extends State<GamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const PlayerTurnChip(),
+        centerTitle: true,
         leading: const MyBackButton(),
         actions: const [ResetButton()],
         bottom: const PreferredSize(
             preferredSize: Size(double.infinity, 50),
-            child: GameScore(
-              scoreO: 'O',
-              scoreX: 'X',
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              // Too big name throws an error
+              child: FittedBox(child: GameScore()),
             )),
       ),
       body: OrientationBuilder(builder: (context, orientation) {

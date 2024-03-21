@@ -63,3 +63,6 @@ final gameBordProvider =
     StateNotifierProvider<GameBord, List<Player>>((ref) => GameBord());
 
 final turnProvider = StateProvider<PlayerTurn>((ref) => PlayerTurn.x);
+
+final playerXNameProvider = StateProvider<String>((ref) => 'X');
+final playerONameProvider = StateProvider<String>((ref) => 'O');

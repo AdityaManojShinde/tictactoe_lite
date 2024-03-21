@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       child: ElevatedButton.icon(
           onPressed: () {
-            context.go('/game');
+            context.go('/form');
           },
           icon: const Icon(Icons.play_arrow),
           label: const Text('Play')),
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [gameIcon, playButton],
+            children: [Center(child: gameIcon), Center(child: playButton)],
           );
         }
         return Column(
