@@ -24,11 +24,7 @@ class _GamePageState extends State<GamePage> {
         actions: const [ResetButton()],
         bottom: const PreferredSize(
             preferredSize: Size(double.infinity, 50),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              // Too big name throws an error
-              child: FittedBox(child: GameScore()),
-            )),
+            child: FittedBox(child: GameScore())),
       ),
       body: OrientationBuilder(builder: (context, orientation) {
         if (orientation == Orientation.landscape) {

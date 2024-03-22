@@ -63,7 +63,8 @@ class SettingsPage extends StatelessWidget {
                   .headlineSmall!
                   .copyWith(color: textColor),
             ),
-            onTap: () => appShare.share(context),
+            onTap: () => appShare.share(context,
+                "Found this awesome Tic Tac Toe game called Tic Tac Toe Lite! It's super lightweight and perfect for quick matches. ⚡ Wanna play?\nhttps://play.google.com/store/apps/details?id=tech.din0.tic_tac_toe_lite"),
           ),
         ],
       ),

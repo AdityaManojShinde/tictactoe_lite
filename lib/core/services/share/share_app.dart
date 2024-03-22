@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ShareApp {
-  void share(BuildContext ctx) async {
+  void share(BuildContext ctx, String content) async {
     try {
-      await Share.share(
-          'check out this awesome app on Goggle Play Store\nLink : https://play.google.com/store/apps/details?id=tech.din0.tic_tac_toe_lite');
+      await Share.share(content);
     } catch (e) {
       if (kDebugMode) {
         print(e);

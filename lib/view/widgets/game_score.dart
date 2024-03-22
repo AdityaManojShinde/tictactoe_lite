@@ -13,27 +13,30 @@ class GameScore extends ConsumerWidget {
     final String scoreX = ref.read(playerXNameProvider);
     final String scoreO = ref.read(playerONameProvider);
     final score = ref.watch(gameScoreProvider);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        AutoSizeText(
-          '${scoreX.isEmpty ? "X" : scoreX} : ${score[0]}',
-          maxLines: 1,
-          softWrap: true,
-          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-              fontWeight: FontWeight.bold,
-              color: score[0] > score[1] ? Colors.lightGreen : Colors.red),
-        ),
-        const SizedBox(
-          width: 50,
-        ),
-        AutoSizeText('${scoreO.isEmpty ? "O" : scoreO} : ${score[1]}',
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          AutoSizeText(
+            '${scoreX.isEmpty ? "X" : scoreX} : ${score[0]}',
             maxLines: 1,
             softWrap: true,
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                 fontWeight: FontWeight.bold,
-                color: score[0] < score[1] ? Colors.lightGreen : Colors.red)),
-      ],
+                color: score[0] > score[1] ? Colors.lightGreen : Colors.red),
+          ),
+          const SizedBox(
+            width: 50,
+          ),
+          AutoSizeText('${scoreO.isEmpty ? "O" : scoreO} : ${score[1]}',
+              maxLines: 1,
+              softWrap: true,
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: score[0] < score[1] ? Colors.lightGreen : Colors.red)),
+        ],
+      ),
     );
   }
 }
